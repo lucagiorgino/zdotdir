@@ -3,8 +3,6 @@
 # .zshrc - Zsh file loaded on interactive shell sessions.
 #
 
-echo "new"
-
 # zmodload zsh/zprof
 POSH_THEMES_PATH=/mnt/c/Users/lucag/AppData/Local/Programs/oh-my-posh/themes
 eval "$(oh-my-posh init zsh --config ${POSH_THEMES_PATH}/half-life.omp.json)"
@@ -72,6 +70,6 @@ unset _rc
 # To customize prompt, run `p10k configure` or edit .p10k.zsh.
 # [[ ! -f ${ZDOTDIR:-$HOME}/.p10k.zsh ]] || source ${ZDOTDIR:-$HOME}/.p10k.zsh
 
-eval "$(~/.local/bin/mise activate zsh)"
+eval "$(~/.cargo/bin/mise activate zsh)"
 
 # zprof
