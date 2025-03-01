@@ -1,6 +1,6 @@
 # zdotdir
 
-> A sample Zsh config using the antidote plugin manager
+> My Zsh config using the antidote plugin manager
 
 ## Description
 
@@ -27,14 +27,17 @@ Clone this project to `$ZDOTDIR`, and then make `~/.zshenv` source `$ZDOTDIR/.zs
 ```zsh
 # clone this project
 ZDOTDIR=~/.config/zsh
-git clone --branch kickstart https://github.com/getantidote/zdotdir $ZDOTDIR
+git clone https://github.com/lucagiorgino/zdotdir $ZDOTDIR
 
 # source the .zshenv from ZDOTDIR
-[[ -f ~/.zshenv ]] && mv -f ~/.zshenv ~/.zshenv.bak
+# [[ -f ~/.zshenv ]] && mv -f ~/.zshenv ~/.zshenv.bak
 echo ". $ZDOTDIR/.zshenv" > ~/.zshenv
 
 # start a new zsh session
 zsh
 ```
 
-[antidote]: https://getantidote.github.io
+## Reference
+
+- `antidote`: https://antidote.sh/
+- `awesome-zsh-plugins`: https://github.com/unixorn/awesome-zsh-plugins

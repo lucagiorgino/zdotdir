@@ -4,12 +4,12 @@
 #
 
 # single character aliases - be sparing!
-alias _=sudo
-alias l=ls
-alias g=git
+# alias _=sudo
+# alias l=ls
+# alias g=git
 
 # mask built-ins with better defaults
-alias vi=vim
+# alias vi=vim
 
 # more ways to ls
 alias ll='ls -lh'
@@ -36,6 +36,10 @@ alias urlencode='python3 -c "import sys, urllib.parse as ul; \
 
 # misc
 alias please=sudo
-alias zshrc='${EDITOR:-vim} "${ZDOTDIR:-$HOME}"/.zshrc'
-alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
-alias zdot='cd ${ZDOTDIR:-~}'
+# alias zshrc='${EDITOR:-vim} "${ZDOTDIR:-$HOME}"/.zshrc'
+# alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
+# alias zdot='cd ${ZDOTDIR:-~}'
+
+alias python=python3
+alias code="/mnt/c/Program\ Files/Microsoft\ VS\ Code/bin/code"
+# alias ls='ls --color=auto'
