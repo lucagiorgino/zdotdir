@@ -37,6 +37,15 @@ echo ". $ZDOTDIR/.zshenv" > ~/.zshenv
 zsh
 ```
 
+## Dev Environment
+
+Setup dev environment with [`mise`](https://mise.jdx.dev/)
+
+```zsh
+ln -sf $ZDOTDIR/.system/config.toml "${HOME}/.config/mise/config.toml"
+mise install
+```
+
 ## Reference
 
 - `antidote`: https://antidote.sh/
