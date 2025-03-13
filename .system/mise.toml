@@ -1,12 +1,13 @@
 [tools]
 node = "latest"
 go = "latest"
-# kubectl = "latest"
-# helm = "latest"
-# kubectx = "latest"
+kubectl = "latest"
+helm = "latest"
+minikube = "latest"
+kubectx = "latest"
 # kubens = "latest"
-# k9s = "latest"
+k9s = "latest"
 
 [alias]
-# kubens = "https://gitlab.com/wt0f/asdf-kubectx"
-# kubectl = "https://github.com/asdf-community/asdf-kubectl"
+kubectx = "https://gitlab.com/wt0f/asdf-kubectx"
+kubectl = "https://github.com/asdf-community/asdf-kubectl"
