@@ -7,6 +7,7 @@ minikube = "latest"
 kubectx = "latest"
 # kubens = "latest"
 k9s = "latest"
+# python = "latest"
 
 [alias]
 kubectx = "https://gitlab.com/wt0f/asdf-kubectx"
