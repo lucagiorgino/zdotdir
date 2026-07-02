@@ -73,3 +73,10 @@ unset _rc
 eval "$(~/.cargo/bin/mise activate zsh)"
 
 # zprof
+# pnpm
+export PNPM_HOME="/home/lucag/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
