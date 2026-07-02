@@ -37,6 +37,8 @@ echo ". $ZDOTDIR/.zshenv" > ~/.zshenv
 zsh
 ```
 
+<!-- Changing the permission of .system/bin.zsh may be required -->
+
 ## Dev Environment
 
 Setup dev environment with [`mise`](https://mise.jdx.dev/)
