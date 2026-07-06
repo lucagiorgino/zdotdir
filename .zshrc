@@ -4,8 +4,7 @@
 #
 
 # zmodload zsh/zprof
-POSH_THEMES_PATH=/mnt/c/Users/lucag/AppData/Local/Programs/oh-my-posh/themes
-eval "$(oh-my-posh init zsh --config ${POSH_THEMES_PATH}/half-life.omp.json)"
+eval "$(oh-my-posh init zsh --config $POSH_THEMES_PATH/half-life.omp.json)"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of .zshrc.
 # Initialization code that may require console input (password prompts, [y/n]

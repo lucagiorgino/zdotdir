@@ -10,6 +10,6 @@ k9s = "latest"
 python = "latest"
 pnpm = "latest"
 
-[alias]
+[tool_alias]
 kubectx = "https://gitlab.com/wt0f/asdf-kubectx"
 kubectl = "https://github.com/asdf-community/asdf-kubectl"

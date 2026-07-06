@@ -1,5 +1,16 @@
 #!/bin/zsh
 
+if ! command -v cc >/dev/null 2>&1
+then
+    echo "Installing build-essential..."
+    sudo apt update && sudo apt install -y build-essential
+fi
+
+if ! command -v pkg-config >/dev/null 2>&1 || ! pkg-config --exists openssl; then
+    echo "Installing pkg-config and libssl-dev (missing OpenSSL dependencies)..."
+    sudo apt update && sudo apt install -y pkg-config libssl-dev
+fi
+
 if ! command -v cargo 2>&1 >/dev/null
 then
     echo "Installing Rust..." && \

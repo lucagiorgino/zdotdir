@@ -25,11 +25,19 @@ A sample antidote `.zsh_plugins.txt` file that bundles plugins with the followin
 Clone this project to `$ZDOTDIR`, and then make `~/.zshenv` source `$ZDOTDIR/.zshenv`.
 
 ```zsh
+cd .system
+export PATH="$HOME/.local/bin:$PATH"
+chmod +x 1_install_zsh.sh 2_setup_omp.zsh bin.zsh
+./1_install_zsh.sh
+./2_setup_omp.zsh
+
+
 # clone this project
 ZDOTDIR=~/.config/zsh
 git clone https://github.com/lucagiorgino/zdotdir $ZDOTDIR
 
 # source the .zshenv from ZDOTDIR
+# securely renames existing .zshenv
 # [[ -f ~/.zshenv ]] && mv -f ~/.zshenv ~/.zshenv.bak
 echo ". $ZDOTDIR/.zshenv" > ~/.zshenv
 
