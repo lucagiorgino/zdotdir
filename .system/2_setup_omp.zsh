@@ -36,6 +36,6 @@ echo "All checks complete!"
 
 echo "Installing Oh My Posh..."
 
-curl -s https://ohmyposh.dev/install.sh | zsh -s
+curl -s https://ohmyposh.dev/install.sh | bash  -s
 
 echo "Oh My Posh installation complete!"

@@ -4,6 +4,8 @@
 #
 
 # zmodload zsh/zprof
+# TODO: improve by using WSLENV
+export POSH_THEMES_PATH=/mnt/c/Program Files (x86)/oh-my-posh/themes/
 eval "$(oh-my-posh init zsh --config $POSH_THEMES_PATH/half-life.omp.json)"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of .zshrc.

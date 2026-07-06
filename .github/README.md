@@ -27,9 +27,10 @@ Clone this project to `$ZDOTDIR`, and then make `~/.zshenv` source `$ZDOTDIR/.zs
 ```zsh
 cd .system
 export PATH="$HOME/.local/bin:$PATH"
-chmod +x 1_install_zsh.sh 2_setup_omp.zsh bin.zsh
-./1_install_zsh.sh
-./2_setup_omp.zsh
+chmod +x 2_setup_omp.zsh 3_bin.zsh 1_install_zsh.sh 
+./2_setup_omp.sh
+./3_bin.zsh
+./1_install_zsh
 
 
 # clone this project
