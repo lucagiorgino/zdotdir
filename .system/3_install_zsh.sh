@@ -23,13 +23,7 @@ if [ "$CURRENT_SHELL" = "zsh" ]; then
     echo "✅ Zsh is already your default shell."
 else
     echo "⏳ Changing your default shell to Zsh..."
-    # Using 'chsh' as per your guide instructions
     sudo chsh -s "$(which zsh)" "$USER"
-    
-    echo "--------------------------------------------------------"
-    echo "🎉 Setup complete! Please log out and log back in (or restart)"
-    echo "   your computer for the default shell change to take effect."
-    echo "--------------------------------------------------------"
 fi
 
 # 4. Launch Zsh for the current session

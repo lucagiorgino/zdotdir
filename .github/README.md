@@ -20,30 +20,21 @@ A sample antidote `.zsh_plugins.txt` file that bundles plugins with the followin
 - Lots of [helpful plugins](https://github.com/unixorn/awesome-zsh-plugins)!
 - And much more, all without compromising shell speed :rocket:
 
+## Prerequisites
+
+
+
 ## Installation
 
 Clone this project to `$ZDOTDIR`, and then make `~/.zshenv` source `$ZDOTDIR/.zshenv`.
 
 ```zsh
-cd .system
-export PATH="$HOME/.local/bin:$PATH"
-chmod +x 2_setup_omp.zsh 3_bin.zsh 1_install_zsh.sh 
-./2_setup_omp.sh
-./3_bin.zsh
-./1_install_zsh
-
-
 # clone this project
 ZDOTDIR=~/.config/zsh
 git clone https://github.com/lucagiorgino/zdotdir $ZDOTDIR
 
-# source the .zshenv from ZDOTDIR
-# securely renames existing .zshenv
-# [[ -f ~/.zshenv ]] && mv -f ~/.zshenv ~/.zshenv.bak
-echo ". $ZDOTDIR/.zshenv" > ~/.zshenv
-
-# start a new zsh session
-zsh
+chmod +x $ZDOTDIR/.system/0_root.sh
+sudo $ZDOTDIR/.system/0_root.sh
 ```
 
 <!-- Changing the permission of .system/bin.zsh may be required -->
@@ -55,6 +46,14 @@ Setup dev environment with [`mise`](https://mise.jdx.dev/)
 ```zsh
 ln -sf $ZDOTDIR/.system/config.toml "${HOME}/.config/mise/config.toml"
 mise install
+```
+
+## Utils
+
+```powershell
+wsl --unregister Ubuntu
+wsl --install -d Ubuntu
+wsl --set-default Ubuntu
 ```
 
 ## Reference

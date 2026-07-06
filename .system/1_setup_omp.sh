@@ -4,16 +4,10 @@
 # Note: 'realpath' and 'dirname' are part of the 'coreutils' package on Debian/Ubuntu.
 PACKAGES=("curl" "unzip" "coreutils")
 
-echo "Checking system dependencies..."
-
-# Check if the user has sudo/root permissions
-if [ "$EUID" -ne 0 ]; then
-    echo "Please run this script with sudo or as root to install missing packages."
-    exit 1
-fi
+echo "🌀 Checking system dependencies..."
 
 # Update package lists first
-echo "Updating package lists..."
+echo "🌀 Updating package lists..."
 apt-get update -y > /dev/null 2>&1
 
 # Loop through each package and install if missing
@@ -32,10 +26,18 @@ for pkg in "${PACKAGES[@]}"; do
     fi
 done
 
-echo "All checks complete!"
+echo "✅All checks complete!"
 
-echo "Installing Oh My Posh..."
+if ! command -v oh-my-posh >/dev/null 2>&1; then
+    echo "🌀 Oh My Posh not found. Installing Oh My Posh..."
 
-curl -s https://ohmyposh.dev/install.sh | bash  -s
+    # Create local bin directory if it doesn't exist
+    mkdir -p "$HOME/.local/bin"
+    
+    # Download and install the binary natively
+    curl -s https://ohmyposh.dev/install.sh | bash -s -- -d "$HOME/.local/bin"
 
-echo "Oh My Posh installation complete!"
+    echo "🚀 Oh My Posh installed."
+else
+    echo "✅ Oh My Posh is already installed."
+fi

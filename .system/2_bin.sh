@@ -1,26 +1,41 @@
-#!/bin/zsh
+#!/bin/sh
 
 if ! command -v cc >/dev/null 2>&1
 then
-    echo "Installing build-essential..."
+    echo "🌀 Installing build-essential..."
     sudo apt update && sudo apt install -y build-essential
+    echo "🚀 build-essential installed."
+else
+    echo "✅ build-essential is already installed."
 fi
 
 if ! command -v pkg-config >/dev/null 2>&1 || ! pkg-config --exists openssl; then
-    echo "Installing pkg-config and libssl-dev (missing OpenSSL dependencies)..."
+    echo "🌀 Installing pkg-config and libssl-dev (missing OpenSSL dependencies)..."
     sudo apt update && sudo apt install -y pkg-config libssl-dev
+    echo "🚀 pkg-config and OpenSSL dependencies installed."
+else
+    echo "✅ pkg-config and OpenSSL dependencies are already installed."
 fi
 
 if ! command -v cargo 2>&1 >/dev/null
 then
-    echo "Installing Rust..." && \
+    echo "🌀 Installing Rust..." && \
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+    # Source the new cargo path into the current script session
+    source "$HOME/.cargo/env"
+    echo "🚀 Rust installed."
+else
+    echo "✅ Rust is already installed."
 fi
 
 if ! command -v mise 2>&1 >/dev/null && command -v cargo 2>&1 >/dev/null
 then
-    echo "Installing Mise (with cargo)..." && \
+    echo "🌀 Installing Mise (with cargo)..." && \
     cargo install mise
+    echo "🚀 Mise installed."
+else
+    echo "✅ Mise is already installed."
 fi
 
 if ! command -v batcat 2>&1 >/dev/null || ! command -v bat 2>&1 >/dev/null
@@ -29,10 +44,14 @@ then
     sudo apt install bat
     mkdir -p ~/.local/bin
     ln -s /usr/bin/batcat ~/.local/bin/bat
+    echo "🚀 bat installed."
+else
+    echo "✅ bat is already installed."
 fi
 
 if ! command -v docker 2>&1 >/dev/null    
 then
+    echo "🌀 Installing Docker..."
     # https://docs.docker.com/engine/install/ubuntu/
     # Add Docker's official GPG key:
     sudo apt-get update
@@ -56,4 +75,8 @@ then
     sudo groupadd docker
     sudo usermod -aG docker $USER
     newgrp docker
+
+    echo "🚀 Docker installation complete!"
+else
+    echo "✅ Docker is already installed."
 fi
