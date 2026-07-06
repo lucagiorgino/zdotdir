@@ -34,7 +34,15 @@ ZDOTDIR=~/.config/zsh
 git clone https://github.com/lucagiorgino/zdotdir $ZDOTDIR
 
 chmod +x $ZDOTDIR/.system/0_root.sh
-sudo $ZDOTDIR/.system/0_root.sh
+sudo ZDOTDIR="$ZDOTDIR" "$ZDOTDIR/.system/0_root.sh"
+
+# source the .zshenv from ZDOTDIR
+# securely renames existing .zshenv
+# [[ -f ~/.zshenv ]] && mv -f ~/.zshenv ~/.zshenv.bak
+echo ". $ZDOTDIR/.zshenv" > ~/.zshenv
+
+# start a new zsh session
+zsh
 ```
 
 <!-- Changing the permission of .system/bin.zsh may be required -->

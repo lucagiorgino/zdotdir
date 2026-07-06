@@ -23,7 +23,7 @@ then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
     # Source the new cargo path into the current script session
-    source "$HOME/.cargo/env"
+    source "$ZUSERHOME/.cargo/env"
     echo "🚀 Rust installed."
 else
     echo "✅ Rust is already installed."

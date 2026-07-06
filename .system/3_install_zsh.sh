@@ -10,7 +10,7 @@ if command -v zsh >/dev/null 2>&1; then
     echo "✅ Zsh is already installed."
 else
     echo "⏳ Installing Zsh..."
-    sudo apt update && sudo apt install -y zsh
+    sudo apt update && apt install -y zsh
 fi
 
 # 2. Verify installation
