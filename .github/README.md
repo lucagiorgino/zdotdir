@@ -22,7 +22,7 @@ A sample antidote `.zsh_plugins.txt` file that bundles plugins with the followin
 
 ## Prerequisites
 
-
+<!-- TODO -->
 
 ## Installation
 
