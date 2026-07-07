@@ -67,12 +67,19 @@ then
 
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-    # https://docs.docker.com/engine/install/linux-postinstall/
-    # Manage Docker as a non-root user
-    sudo groupadd docker
-    sudo usermod -aG docker $USER
-    newgrp docker
+    if ! command -v newgrp 2>&1 >/dev/null    
+    then
+        echo "❌ newgrp command missing."
+    else
+        # https://docs.docker.com/engine/install/linux-postinstall/
+        # Manage Docker as a non-root user
+        sudo groupadd docker
+        sudo usermod -aG docker $USER
+        newgrp docker
 
+        echo "✅ Docker usable as non-root user."
+    fi
+ 
     echo "🚀 Docker installation complete!"
 else
     echo "✅ Docker is already installed."
