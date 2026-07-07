@@ -20,13 +20,13 @@ then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
     # Source the new cargo path into the current script session
-    source "$HOME/.cargo/env"
+    . "$HOME/.cargo/env"
     echo "🚀 Rust installed."
 else
     echo "✅ Rust is already installed."
 fi
 
-if ! command -v mise 2>&1 >/dev/null && command -v cargo 2>&1 >/dev/null
+if ! command -v mise >/dev/null 2>&1 && command -v cargo >/dev/null 2>&1;
 then
     echo "🌀 Installing Mise (with cargo)..." && \
     cargo install mise
