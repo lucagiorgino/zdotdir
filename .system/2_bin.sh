@@ -29,7 +29,7 @@ fi
 if ! command -v mise >/dev/null 2>&1 && command -v cargo >/dev/null 2>&1;
 then
     echo "🌀 Installing Mise (with cargo)..." && \
-    cargo install mise
+    cargo install --locked mise
     echo "🚀 Mise installed."
 else
     echo "✅ Mise is already installed."

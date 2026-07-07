@@ -57,12 +57,13 @@ exec zsh
 Setup dev environment with [`mise`](https://mise.jdx.dev/)
 
 ```zsh
-ln -sf $ZDOTDIR/.system/config.toml "${HOME}/.config/mise/config.toml"
+ln -sf $ZDOTDIR/.system/mise.toml "${HOME}/.config/mise.toml"
 mise install
 ```
 
 ## Utils
 
+Uninstall and install Ubuntu on WSL
 ```powershell
 wsl --unregister Ubuntu
 wsl --install -d Ubuntu
