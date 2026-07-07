@@ -33,8 +33,13 @@ Clone this project to `$ZDOTDIR`, and then make `~/.zshenv` source `$ZDOTDIR/.zs
 ZDOTDIR=~/.config/zsh
 git clone https://github.com/lucagiorgino/zdotdir $ZDOTDIR
 
-chmod +x $ZDOTDIR/.system/0_root.sh
-sudo ZDOTDIR="$ZDOTDIR" "$ZDOTDIR/.system/0_root.sh"
+chmod +x $ZDOTDIR/.system/1_sudo.sh
+chmod +x $ZDOTDIR/.system/2_bin.sh
+chmod +x $ZDOTDIR/.system/3_install_zsh.sh
+
+sudo $ZDOTDIR/.system/1_sudo.sh
+$ZDOTDIR/.system/2_bin.sh
+$ZDOTDIR/.system/3_install_zsh.sh
 
 # source the .zshenv from ZDOTDIR
 # securely renames existing .zshenv
@@ -42,7 +47,7 @@ sudo ZDOTDIR="$ZDOTDIR" "$ZDOTDIR/.system/0_root.sh"
 echo ". $ZDOTDIR/.zshenv" > ~/.zshenv
 
 # start a new zsh session
-zsh
+exec zsh
 ```
 
 <!-- Changing the permission of .system/bin.zsh may be required -->
